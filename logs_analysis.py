@@ -3,6 +3,7 @@ import psycopg2
 
 DBNAME = "news"
 
+
 def pop_articles():
     db = psycopg2.connect(database=DBNAME)
     cur = db.cursor()
@@ -13,6 +14,7 @@ def pop_articles():
     for article in topthree:
         print(article[0], "-", article[1])
     db.close()
+
 
 def pop_authors():
     db = psycopg2.connect(database=DBNAME)
@@ -41,6 +43,7 @@ def errors():
             print(day[0], "-", value, '\b%')
     db.close()
 
-pop_articles();
-pop_authors();
-errors();
+
+pop_articles()
+pop_authors()
+errors()
