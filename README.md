@@ -5,7 +5,8 @@ News-Data is a program that applies queries to a database and prints the results
 You need Python installed on your OS to execute the program. Any version
 after 2.7 will do.
 
-Installation packages can be found here: https://www.python.org/getit/
+Installation packages can be found here:
+https://www.python.org/getit/
 
 You will also need to download virtual machine and vagrant, which will provide you the PostgreSQL database as well as an environment to run the project in. These two pieces of software can be downloaded here:
 https://www.virtualbox.org/wiki/Download_Old_Builds_5_2
@@ -32,4 +33,4 @@ python logs_analysis.py
 This work is public domain.
 
 ## Acknowledgements
-Thank you again to all my teachers at Udacity for continue to teach me how to make useful programs like this one!
+Thank you again to all my teachers at Udacity for continuing to teach me how to make useful programs like this one!
