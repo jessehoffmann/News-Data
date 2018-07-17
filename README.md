@@ -18,7 +18,8 @@ To run the program execute the following from the shell:
 ```
 vagrant up
 ```
-followed by ```
+followed by
+```
 vagrant ssh
 ```
 
