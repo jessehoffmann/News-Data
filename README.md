@@ -15,17 +15,17 @@ Additionally, you will need a copy of the news database which can be downloaded 
 
 ## Deployment
 To run the program execute the following from the shell:
-'''
+```
 vagrant up
-'''
-followed by '''
+```
+followed by ```
 vagrant ssh
-'''
+```
 
 Then navigate to the vagrant folder in the news database you installed. From there execute the python program including any necessary path.
-'''
+```
 python logs_analysis.py
-'''
+```
 
 ## License
 This work is public domain.
