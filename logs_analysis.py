@@ -10,7 +10,7 @@ def pop_articles():
     try:
         db = psycopg2.connect(database=DBNAME)
     except:
-        print ("Unable to connect to the database")
+        print ("Unable to connect to the database.")
     cur = db.cursor()
     cur.execute('''select title, views from articles join
     (select path, count(log.path) as views from log group by path) as topthree
@@ -25,7 +25,7 @@ def pop_authors():
     try:
         db = psycopg2.connect(database=DBNAME)
     except:
-        print ("Unable to connect to the database")
+        print ("Unable to connect to the database.")
     cur = db.cursor()
     cur.execute('''select name, sum(views) as mostpop from authors
     join articles on (authors.id = articles.author)
@@ -42,7 +42,7 @@ def errors():
     try:
         db = psycopg2.connect(database=DBNAME)
     except:
-        print ("Unable to connect to the database")
+        print ("Unable to connect to the database.")
     cur = db.cursor()
     cur.execute('''select date(time), count(*) as total, count(status)
     filter (where status = '404 NOT FOUND') as error from log
