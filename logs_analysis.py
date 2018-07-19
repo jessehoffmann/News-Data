@@ -1,3 +1,5 @@
+#!/usr/bin/env python\
+
 from __future__ import print_function
 import psycopg2
 
@@ -5,7 +7,10 @@ DBNAME = "news"
 
 
 def pop_articles():
-    db = psycopg2.connect(database=DBNAME)
+    try:
+        db = psycopg2.connect(database=DBNAME)
+    except:
+        print ("Unable to connect to the database")
     cur = db.cursor()
     cur.execute('''select title, views from articles join
     (select path, count(log.path) as views from log group by path) as topthree
@@ -17,7 +22,10 @@ def pop_articles():
 
 
 def pop_authors():
-    db = psycopg2.connect(database=DBNAME)
+    try:
+        db = psycopg2.connect(database=DBNAME)
+    except:
+        print ("Unable to connect to the database")
     cur = db.cursor()
     cur.execute('''select name, sum(views) as mostpop from authors
     join articles on (authors.id = articles.author)
@@ -31,7 +39,10 @@ def pop_authors():
 
 
 def errors():
-    db = psycopg2.connect(database=DBNAME)
+    try:
+        db = psycopg2.connect(database=DBNAME)
+    except:
+        print ("Unable to connect to the database")
     cur = db.cursor()
     cur.execute('''select date(time), count(*) as total, count(status)
     filter (where status = '404 NOT FOUND') as error from log
